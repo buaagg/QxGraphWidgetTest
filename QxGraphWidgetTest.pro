@@ -18,3 +18,8 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
+
+win32:INCLUDEPATH = C:/boost/boost_1_54_0
+
+msvc:QMAKE_CXXFLAGS+= -openmp
+msvc:QMAKE_LFLAGS +=  -openmp
