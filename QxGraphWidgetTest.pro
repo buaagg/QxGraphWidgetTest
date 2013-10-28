@@ -13,13 +13,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    qxgraphwidgettest.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    qxgraphwidgettest.h
 
 FORMS    += mainwindow.ui
 
-win32:INCLUDEPATH = C:/boost/boost_1_54_0
-
-msvc:QMAKE_CXXFLAGS+= -openmp
-msvc:QMAKE_LFLAGS +=  -openmp
+win32 {
+    INCLUDEPATH += C:/boost/boost_1_54_0
+    LIBS += -L"C:/boost/boost_1_54_0/stage/lib"
+    QMAKE_CXXFLAGS += -openmp
+}
