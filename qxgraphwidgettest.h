@@ -27,7 +27,7 @@ public:
         QPainter painter;
         painter.begin( this );
 //        painter.setRenderHint( QPainter::HighQualityAntialiasing );
-//        painter.setRenderHint( QPainter::Antialiasing );
+        painter.setRenderHint( QPainter::Antialiasing );
         painter.setPen( QPen(Qt::black, 1) );
         for ( int i = 0; i < pointsPerLine; ++i ) {
             painter.drawLine(
